@@ -34,11 +34,11 @@ Follow these steps to set up and run the project:
 
 2. **Open Google Colab:**
 
-Upload the provided notebook (hybrid_search_RAG.ipynb) to your Google Colab account.
+-  Upload the provided notebook (hybrid_search_RAG.ipynb) to your Google Colab account.
 
 3. **Install Dependencies:**
 
-Run the following commands in the Colab notebook to install the required libraries:
+-  Run the following commands in the Colab notebook to install the required libraries:
 
 ```bash
 !pip install --upgrade --quiet pinecone-client pinecone-text pinecone-notebooks
@@ -48,7 +48,7 @@ Run the following commands in the Colab notebook to install the required librari
 
 4. **Initialize Pinecone:**
 
-Retrieve your Pinecone API key from Google Colab's user data and initialize the Pinecone client:
+-  Retrieve your Pinecone API key from Google Colab's user data and initialize the Pinecone client:
 ```bash
 from google.colab import userdata
 api_key = userdata.get('PINECONE_API')
@@ -69,7 +69,7 @@ index = pc.Index(index_name)
 
 5. **Vector Embedding and Sparse Encoding:**
 
-Set up the vector embeddings and sparse encoding:
+-  Set up the vector embeddings and sparse encoding:
 
 ```bash
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -92,7 +92,7 @@ bm25_encoder = BM25Encoder().load("bm25_values.json")
 
 6. **Create the Retriever and Add Texts:**
 
-Initialize the retriever and add texts to the index:
+-  Initialize the retriever and add texts to the index:
 
 ```bash
 from langchain_community.retrievers import PineconeHybridSearchRetriever
@@ -103,7 +103,7 @@ retriever.add_texts(sentences)
 
 7. **Invoke the Retriever:**
 
-Use the retriever to query the index:
+-  Use the retriever to query the index:
 
 ```bash
 result = retriever.invoke("What city did I visit in 2022?")[0]
